@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "744953182388",
+    "project_id": "college-app-7f46e",
+    "storage_bucket": "college-app-7f46e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744953182388:android:631de29bcfdbc57ea67fe1",
+        "android_client_info": {
+          "package_name": "com.shimultamo.college_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744953182388-qh4t4gsj2m5cm0v2i9fj56b6ckq228sp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhQvhomjfpVj8Q8LmesGCcecQFixld8j4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744953182388-qh4t4gsj2m5cm0v2i9fj56b6ckq228sp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

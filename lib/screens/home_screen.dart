@@ -1,5 +1,6 @@
 import 'package:college_app/model/college_model.dart';
 import 'package:college_app/screens/main_drawer_screen.dart';
+import 'package:college_app/widgets/college_card.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -91,14 +92,14 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Search",
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: 22,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             TextField(
@@ -111,40 +112,29 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderSide: BorderSide.none),
                   hintText: "Search By Institute Name"),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
+            const Text(
+              "College List",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+              ),
+            ),
             Expanded(
-                child: ListView.builder(
-                    itemCount: display_list.length,
-                    itemBuilder: (context, index) => ListTile(
-                          title: Text(
-                            display_list[index].collegeName!,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18),
-                          ),
-                          subtitle: Row(
-                            children: [
-                              Icon(
-                                Icons.location_on,
-                                size: 10,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                display_list[index].collegeAddress!,
-                                style: TextStyle(
-                                    color: Colors.black, fontSize: 12),
-                              ),
-                            ],
-                          ),
-                          leading: Image.network(
-                            display_list[index].collegeLogo ?? "",
-                          ),
-                        )))
+              child: ListView.separated(
+                shrinkWrap: true,
+                itemCount: display_list.length,
+                itemBuilder: (context, index) =>
+                    CollegeCard(model: display_list[index]),
+                separatorBuilder: (BuildContext context, int index) {
+                  return const SizedBox(
+                    height: 10,
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),

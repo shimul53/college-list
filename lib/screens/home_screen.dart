@@ -1,4 +1,5 @@
 import 'package:college_app/model/college_model.dart';
+import 'package:college_app/pages/clickable_alphabet_page.dart';
 import 'package:college_app/screens/main_drawer_screen.dart';
 import 'package:college_app/widgets/college_card.dart';
 import 'package:flutter/material.dart';
@@ -61,8 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
         0123456789,
         "https://www.pngall.com/wp-content/uploads/12/Avatar-Profile-PNG-Photos.png"),
   ];
-
+  static List list = ClickableAlphabetPage.alphabet_list;
   List<CollegeModel> display_list = List.from(college_list);
+  List alphabet_search_list = List.from(list);
   void updateList(String value) {
     setState(() {
       display_list = college_list
@@ -115,12 +117,25 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(
               height: 20,
             ),
+            Container(
+                height: 300,
+                child: ClickableAlphabetPage(
+                  onTap: () {
+                    (value) => updateList(value);
+                  },
+                )),
+            const SizedBox(
+              height: 20,
+            ),
             const Text(
               "College List",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 20,
               ),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             Expanded(
               child: ListView.separated(

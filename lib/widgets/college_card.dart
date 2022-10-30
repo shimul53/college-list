@@ -42,7 +42,7 @@ class CollegeCard extends StatelessWidget {
                     children: [
                       Text(
                         model.collegeName!,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 18),
@@ -57,66 +57,64 @@ class CollegeCard extends StatelessWidget {
                             ),
                             Text(
                               model.collegeAddress!,
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 12),
+                              style: const TextStyle(
+                                  color: Colors.black, fontSize: 12),
                             ),
                           ],
                         ),
                       ),
-                      Row(
+                      Wrap(
+                        spacing: 5.0,
+                        runSpacing: 5.0,
+                        direction: Axis.vertical,
                         children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: new Icon(
-                              Icons.phone,
-                              color: Colors.purpleAccent,
-                              size: 20.0,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                                shape: const CircleBorder(),
-                                backgroundColor: Colors.white),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: new Icon(
-                              Icons.whatsapp,
-                              color: Colors.greenAccent,
-                              size: 20.0,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                                shape: const CircleBorder(),
-                                backgroundColor: Colors.white),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: new Icon(
-                              Icons.video_call,
-                              color: Colors.blueAccent,
-                              size: 20.0,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                                shape: const CircleBorder(),
-                                backgroundColor: Colors.white),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: new Icon(
-                              Icons.message,
-                              color: Colors.orangeAccent,
-                              size: 20.0,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                                shape: const CircleBorder(),
-                                backgroundColor: Colors.white),
+                          Row(
+                            children: [
+                              ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                    shape: const CircleBorder(),
+                                    backgroundColor: Colors.white),
+                                child: const Icon(
+                                  Icons.phone,
+                                  color: Colors.purpleAccent,
+                                  size: 20.0,
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                    shape: const CircleBorder(),
+                                    backgroundColor: Colors.white),
+                                child: const Icon(
+                                  Icons.whatsapp,
+                                  color: Colors.greenAccent,
+                                  size: 20.0,
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                    shape: const CircleBorder(),
+                                    backgroundColor: Colors.white),
+                                child: const Icon(
+                                  Icons.video_call,
+                                  color: Colors.blueAccent,
+                                  size: 20.0,
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                    shape: const CircleBorder(),
+                                    backgroundColor: Colors.white),
+                                child: const Icon(
+                                  Icons.message,
+                                  color: Colors.orangeAccent,
+                                  size: 20.0,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
